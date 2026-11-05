@@ -2,3 +2,5 @@
 /* The supplied marketing capture includes a headline above the device; show the device itself in the hero. */
 .hero-device img{margin-top:0}.hero-device{border-radius:40px 40px 24px 24px}
 [lang=ar] body{font-family:Tahoma,Arial,sans-serif}[lang=ar] h1{line-height:1.25}[lang=ar] h2{line-height:1.35}
+/* Transparent phone artwork sits directly on the page, without a rectangular frame. */
+.hero-device{background:transparent;box-shadow:none;border-radius:0;overflow:visible}.shot img{background:transparent;border-radius:0}
