@@ -4,3 +4,54 @@
 [lang=ar] body{font-family:Tahoma,Arial,sans-serif}[lang=ar] h1{line-height:1.25}[lang=ar] h2{line-height:1.35}
 /* Transparent phone artwork sits directly on the page, without a rectangular frame. */
 .hero-device{background:transparent;box-shadow:none;border-radius:0;overflow:visible}.shot img{background:transparent;border-radius:0}
+
+/* Keep the screenshot rail under the browser's native touch scrolling. */
+.gallery {
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: max(24px, calc((100vw - 1120px) / 2));
+}
+.gallery > * { scroll-snap-align: start; }
+.gallery > :last-child { scroll-snap-align: end; }
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-block: 12px;
+}
+.gallery-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: white;
+  color: var(--ink);
+  cursor: pointer;
+}
+.gallery-controls button:disabled { opacity: .4; cursor: default; }
+.gallery-position { min-width: 5ch; text-align: center; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) {
+  .gallery { scroll-padding-inline: 18px; }
+  .gallery > * { flex: 0 0 min(78vw, 300px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-device { animation: phone-settle 400ms ease-out both; }
+  .features.is-entering { animation: phone-settle 300ms ease-out both; }
+  .button:active, .gallery-controls button:active { scale: .98; }
+  .faq summary::after { transition: rotate 160ms ease-out; }
+}
+@keyframes phone-settle {
+  from { opacity: 0; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+.faq summary::after,
+.faq details[open] summary::after { content: '⌄'; }
+.faq details[open] summary::after { rotate: 180deg; }
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { flex: none; }
