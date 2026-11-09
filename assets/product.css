@@ -1,0 +1,85 @@
+:root{color-scheme:dark;--bg:#080d16;--surface:#121e2e;--ink:#f5f7fa;--muted:#a9b6c8;--line:#2b3a4c}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #b5d8ff;outline-offset:5px}.wrap{width:min(1120px,calc(100% - 48px));margin-inline:auto}.skip{position:fixed;inset-block-start:8px;inset-inline-start:8px;transform:translateY(-180%);z-index:20;background:white;color:black;padding:12px}.skip:focus{transform:none}header{position:sticky;top:0;z-index:10;background:#080d16ed;border-bottom:1px solid #ffffff0d;backdrop-filter:blur(16px)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:650;letter-spacing:-.04em}.brand img{border-radius:9px}.navlinks{display:flex;align-items:center;gap:26px;font-size:14px}.navlinks a{display:flex;align-items:center;min-height:44px}h1,h2,h3,p{margin:0}h1,h2,h3{letter-spacing:-.045em;text-wrap:balance}h1{font-size:clamp(48px,6.6vw,88px);line-height:1.04;max-width:900px;margin:22px auto}h2{font-size:clamp(36px,4.7vw,62px);line-height:1.1}h3{font-size:25px;line-height:1.2}p{line-height:1.7}.eyebrow{font-size:11px;font-weight:650;letter-spacing:.15em;color:var(--muted);margin-bottom:18px}.hero{text-align:center;padding-top:88px;overflow:hidden}.lead{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:610px;margin:0 auto}.actions{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:30px}.button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;border-radius:999px;padding:12px 25px;background:#f3f5f8;color:#0a1422;font-size:15px;font-weight:600}.availability{font-size:12px;color:var(--muted)}.hero-device{width:min(410px,88%);margin:58px auto 0;border-radius:24px;overflow:hidden;box-shadow:0 0 100px #3c62892b}.hero-device img{display:block;width:100%;height:auto}.section{padding-top:112px;padding-bottom:20px}.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:36px}.features article{border:1px solid var(--line);border-radius:26px;background:linear-gradient(135deg,#142235,#101722);padding:30px;min-width:0}.number{display:inline-block;color:#9ab8de;font-size:12px;margin-bottom:30px}.features p{color:var(--muted);font-size:16px;margin-top:16px;max-width:42ch}.gallery-section{overflow:hidden}.muted{color:var(--muted);margin-top:18px}.gallery{display:flex;gap:20px;overflow-x:auto;padding:32px max(24px,calc((100vw - 1120px)/2)) 24px;scroll-snap-type:x mandatory;scrollbar-color:#506885 #101722;overscroll-behavior-x:contain}.shot{flex:0 0 300px;scroll-snap-align:center;margin:0;min-width:0}.shot img{width:100%;height:auto;display:block;border-radius:22px}.shot figcaption{font-size:14px;color:var(--muted);padding:14px 4px}.privacy{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:center}.privacy-icon{display:flex;align-items:center;justify-content:center;width:180px;height:180px;border-radius:48px;font-size:110px;background:linear-gradient(135deg,#233f62,#121c2a);border:1px solid #4a627d;color:#c8d9ec}.privacy p:not(.eyebrow){margin-top:24px;color:var(--muted);max-width:56ch}.textlink{display:inline-flex;align-items:center;min-height:48px;margin-top:18px;text-decoration:underline;text-underline-offset:6px}.faq{max-width:800px}.faq h2{margin-bottom:30px}details{border-bottom:1px solid var(--line);padding:20px 0}summary{cursor:pointer;font-size:18px;font-weight:550;min-height:44px;align-content:center}details p{color:var(--muted);padding:12px 0 4px;max-width:66ch}.closing{text-align:center;padding-bottom:100px}.closing img{border-radius:20px;margin-bottom:30px}.closing p{color:var(--muted);margin:22px 0}.closing .button{margin-top:6px}footer{border-top:1px solid var(--line);padding-top:28px;padding-bottom:35px;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted)}footer nav{display:flex;gap:22px;flex-wrap:wrap;margin-inline-start:auto}footer a{display:inline-flex;align-items:center;min-height:44px}footer small{flex-basis:100%;font-size:11px}[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{letter-spacing:0}[dir=rtl] .eyebrow{letter-spacing:0}@media(max-width:600px){.wrap{width:calc(100% - 36px)}.nav{min-height:66px}.navlinks{gap:18px}.desktop{display:none!important}.hero{padding-top:58px}h1{font-size:46px}.hero-device{margin-top:38px;width:100%;max-width:360px}.section{padding-top:72px}.features{grid-template-columns:1fr;gap:12px;margin-top:28px}.features article{padding:24px;border-radius:22px}.number{margin-bottom:16px}.features p{font-size:15px}.shot{flex-basis:82vw;max-width:350px}.gallery{gap:14px;padding-inline:18px}.privacy{grid-template-columns:1fr;gap:28px}.privacy-icon{width:80px;height:80px;border-radius:24px;font-size:50px}.closing{padding-bottom:65px}footer{gap:12px}footer nav{margin-inline-start:0;width:100%;gap:20px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* The supplied marketing capture includes a headline above the device; show the device itself in the hero. */
+.hero-device img{margin-top:0}.hero-device{border-radius:40px 40px 24px 24px}
+[lang=ar] body{font-family:Tahoma,Arial,sans-serif}[lang=ar] h1{line-height:1.25}[lang=ar] h2{line-height:1.35}
+/* Transparent phone artwork sits directly on the page, without a rectangular frame. */
+.hero-device{background:transparent;box-shadow:none;border-radius:0;overflow:visible}.shot img{background:transparent;border-radius:0}
+
+/* Keep the screenshot rail under the browser's native touch scrolling. */
+.gallery {
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: max(24px, calc((100vw - 1120px) / 2));
+}
+.gallery > * { scroll-snap-align: start; }
+.gallery > :last-child { scroll-snap-align: end; }
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-block: 12px;
+}
+.gallery-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: white;
+  color: var(--ink);
+  cursor: pointer;
+}
+.gallery-controls button:disabled { opacity: .4; cursor: default; }
+.gallery-position { min-width: 5ch; text-align: center; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) {
+  .gallery { scroll-padding-inline: 18px; }
+  .gallery > * { flex: 0 0 min(78vw, 300px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-device { animation: phone-settle 400ms ease-out both; }
+  .features.is-entering { animation: phone-settle 300ms ease-out both; }
+  .button:active, .gallery-controls button:active { scale: .98; }
+  .faq summary::after { transition: rotate 160ms ease-out; }
+}
+@keyframes phone-settle {
+  from { opacity: 0; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+.faq summary::after,
+.faq details[open] summary::after { content: '⌄'; }
+.faq details[open] summary::after { rotate: 180deg; }
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { flex: none; }
+
+@media (max-width: 600px) {
+  .hero { padding-top: 42px; }
+  .hero h1 { font-size: clamp(36px, 10vw, 54px); margin-block: 12px 16px; }
+  .hero .lead { font-size: 16px; line-height: 1.55; }
+  .hero .actions { margin-top: 20px; gap: 12px; }
+  .hero-device { margin-top: 24px; }
+  .section { padding-top: 60px; }
+  .features { margin-top: 24px; }
+  .features .number { margin-bottom: 12px; }
+  .navlinks a, footer a, .textlink { min-height: 44px; display: inline-flex; align-items: center; }
+}
+
+/* Keep the product imagery as the strongest element on the page. */
+.hero {
+  background: radial-gradient(ellipse at 50% 44%, #182b43 0%, transparent 68%);
+}
+.hero .eyebrow { color: #c0d0e4; }
+.hero-device { filter: drop-shadow(0 20px 38px #0007); }
+.features article { background: linear-gradient(155deg, #17263a, #101926); }
+.gallery-controls button { background: #17263a; color: var(--ink); }
+.shot figcaption { text-align: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero > :is(.eyebrow, h1, .lead, .actions) {
+    animation: phone-settle 340ms cubic-bezier(.2,.75,.3,1) both;
+  }
+  .button, .gallery-controls button { transition: scale 140ms ease-out; }
+}
