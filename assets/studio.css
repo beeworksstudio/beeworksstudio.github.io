@@ -10,3 +10,32 @@ body{background:#fff}.nav{position:sticky;top:0;z-index:10;background:#ffffffed;
 /* The supplied PNG already contains the phone: avoid a second device frame. */
 .product-shot{align-items:flex-start;max-height:590px}.product-shot img{width:min(100%,390px);height:auto;object-fit:contain;flex-shrink:0;margin-top:-55px}.product-shot:after{display:none}
 @media(max-width:760px){.product-shot{max-height:520px;padding:0 12px}.product-shot img{width:min(100%,350px);margin-top:-42px}}
+
+@media (max-width: 600px) {
+  .hero { padding-block-start: 44px; }
+  .hero h1 { font-size: clamp(34px, 9.5vw, 52px); }
+  .hero-art { margin-block-start: 24px; }
+  .nav a, .footer a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+
+/* Studio pages use the same spacious product presentation and quiet surfaces. */
+:root { --blue: #0066cc; }
+.product { background: linear-gradient(145deg, #f5f5f7, #e9edf4); }
+.product-shot { background: radial-gradient(ellipse at 50% 42%, #d4ddeb, transparent 69%); }
+.field input, .field textarea { border-color: var(--line); }
+.direct a { min-height: 44px; display: inline-flex; align-items: center; }
+.error-page { padding-block: clamp(56px, 11vw, 140px); }
+.error-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 28px; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-art { animation: studio-settle 360ms cubic-bezier(.2,.75,.3,1) both; }
+  .action { transition: scale 140ms ease-out; }
+  .action:active { scale: .98; }
+}
+@keyframes studio-settle {
+  from { opacity: 0; translate: 0 8px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+.app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px; }
+
+

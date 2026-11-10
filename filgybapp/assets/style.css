@@ -101,3 +101,95 @@
 [dir=rtl] .studio-panel h2{font-size:26px;direction:ltr;unicode-bidi:isolate;text-align:start}
 @media(max-width:760px){.nav nav a[href$="#features"]{display:none}.nav nav{gap:10px}.language-switch{padding:9px 12px!important;min-width:54px}[dir=rtl] .hero h1{font-size:clamp(38px,9vw,56px)}[dir=rtl] .hero-notes span+span:before{margin-inline-end:10px}[dir=rtl] .feature>p{min-height:0}[dir=rtl] .section-heading h2{font-size:30px}[dir=rtl] .privacy-section h2{font-size:29px}[dir=rtl] .wealth-visual>strong{font-size:34px}[dir=rtl] .details-grid h3{min-height:64px}[dir=rtl] .legal-grid h2{font-size:20px}}
 @media(max-width:360px){.nav nav{gap:4px}.nav nav a{font-size:11px}.language-switch{font-size:12px!important;padding-inline:9px!important}[dir=rtl] .brand{font-size:11px;gap:6px}[dir=rtl] .hero-notes span+span:before{margin-inline-end:7px}}
+
+.help-topics { display: grid; gap: 10px; margin-block: 28px; }
+.help-topics details { border: 1px solid var(--line); border-radius: 14px; padding-inline: 16px; }
+.help-topics summary, .legal-grid aside summary { min-height: 44px; padding-block: 12px; cursor: pointer; }
+.help-topics details p { padding-bottom: 14px; }
+.legal-grid aside a { min-height: 44px; display: flex; align-items: center; }
+.legal-grid [id] { scroll-margin-top: 88px; }
+@media (max-width: 760px) {
+  .legal-grid aside { display: block; position: static; }
+  .legal-header { padding-top: 36px; }
+  footer a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+
+/* Editorial reading pages share the same warm canvas and restrained surfaces. */
+.about-page, .support-page, .legal { --canvas: #faf9f6; }
+.about-page > .lede, .support-page > .lede { max-width: 48ch; }
+.about-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 72px);
+  margin-block: 36px 48px;
+}
+.about-story .about-copy { margin: 0; }
+.about-visual {
+  margin: 0;
+  padding: clamp(18px, 3vw, 34px);
+  border-radius: 28px;
+  background: radial-gradient(ellipse at 50% 25%, #243a55, #101a29 76%);
+  text-align: center;
+}
+.about-visual img { display: block; width: min(100%, 260px); height: auto; margin-inline: auto; }
+.studio-panel { background: var(--canvas); }
+.direct-contact a { min-height: 44px; display: inline-flex; align-items: center; }
+.help-topics details, .legal-grid aside { background: var(--canvas); }
+.legal-grid article { min-width: 0; overflow-wrap: anywhere; }
+.legal-grid article p, .legal-grid article li { max-width: 70ch; }
+@media (max-width: 760px) {
+  .about-story { grid-template-columns: 1fr; margin-block: 28px 36px; }
+  .about-visual img { width: min(100%, 210px); }
+}
+
+.help-topics[hidden], .support-tips[hidden] { display: none; }
+
+@media (max-width: 480px) {
+  .studio-support .nav { flex-wrap: wrap; gap: 4px 12px; padding-block: 8px; }
+  .studio-support .nav .brand { min-width: 0; font-size: 14px; letter-spacing: 0; }
+  .studio-support .nav nav { flex-wrap: wrap; gap: 4px 12px; }
+  .studio-support .nav nav a { min-height: 44px; }
+}
+
+.support-app-picker { position: relative; }
+.support-app-picker select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 50px;
+  padding: 13px 15px;
+  padding-inline: 52px 40px;
+  border: 1px solid #ccd4df;
+  border-radius: 12px;
+  background: var(--canvas);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.support-app-picker select:focus { outline: 2px solid #62517f; outline-offset: 3px; border-color: #62517f; }
+.support-app-art {
+  position: absolute;
+  inset-inline-start: 15px;
+  inset-block-start: 50%;
+  width: 26px;
+  height: 26px;
+  transform: translateY(-50%);
+  background: url("beeworks-studio.png") center / contain no-repeat;
+  pointer-events: none;
+}
+.support-app-picker[data-app="filgyb"] .support-app-art { background-image: url("filgyb-icon.png"); }
+.support-app-picker::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 17px;
+  inset-block-start: 50%;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
