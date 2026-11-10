@@ -1,16 +1,6 @@
 'use strict';
 const isArabic = document.documentElement.dir === 'rtl';
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const features = document.querySelector('#features .features');
-if (features && !reducedMotion.matches && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(entries => {
-    if (!entries.some(entry => entry.isIntersecting)) return;
-    features.classList.add('is-entering');
-    observer.disconnect();
-  }, { threshold: 0.12 });
-  observer.observe(features);
-}
-
 const gallery = document.querySelector('.gallery');
 if (gallery?.children.length > 1) {
   const slides = Array.from(gallery.children);
@@ -42,7 +32,8 @@ if (gallery?.children.length > 1) {
         if (Math.abs(slide.offsetLeft - start) <= offset + 2) active = index;
       });
     }
-    position.textContent = `${active + 1} / ${slides.length}`;
+    const label = `${active + 1} / ${slides.length}`;
+    if (position.textContent !== label) position.textContent = label;
     previous.disabled = offset < 2;
     next.disabled = offset >= max - 2;
   }
@@ -62,7 +53,15 @@ if (gallery?.children.length > 1) {
   }
   previous.addEventListener('click', () => step(-1));
   next.addEventListener('click', () => step(1));
-  gallery.addEventListener('scroll', updatePosition, { passive: true });
+  let framePending = false;
+  gallery.addEventListener('scroll', () => {
+    if (framePending) return;
+    framePending = true;
+    requestAnimationFrame(() => {
+      framePending = false;
+      updatePosition();
+    });
+  }, { passive: true });
   window.addEventListener('resize', updatePosition);
   updatePosition();
 }

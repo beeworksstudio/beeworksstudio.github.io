@@ -1,0 +1,29 @@
+/* Avoid re-blurring the moving page beneath the sticky header. */
+body:has([data-section-reveals]) > header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-section-reveals] .is-revealing > :not(.gallery, .gallery-controls) {
+    animation: section-arrival 700ms cubic-bezier(.22, .7, .3, 1) backwards;
+  }
+
+  [data-section-reveals] .is-revealing > :nth-child(2) { animation-delay: 100ms; }
+  [data-section-reveals] .is-revealing > :nth-child(3) { animation-delay: 170ms; }
+  [data-section-reveals] .faq details[open] > :not(summary) {
+    animation: faq-answer-arrival 360ms cubic-bezier(.22, .7, .3, 1);
+  }
+
+  [data-section-reveals] .is-revealing:focus-within > * { animation: none; }
+}
+
+@keyframes section-arrival {
+  from { opacity: .16; transform: translateY(36px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes faq-answer-arrival {
+  from { opacity: .2; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
