@@ -177,7 +177,7 @@
   width: 26px;
   height: 26px;
   transform: translateY(-50%);
-  background: url("beeworks-studio.png") center / contain no-repeat;
+  background: url("/assets/beeworks-logo-light.png") center / contain no-repeat;
   pointer-events: none;
 }
 .support-app-picker[data-app="filgyb"] .support-app-art { background-image: url("filgyb-icon.png"); }
