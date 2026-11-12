@@ -1,0 +1,69 @@
+/* Adapted from Uiverse.io by satyamchaudharydev. */
+body {
+  --button-edge: #10375f;
+  --button-mid: #15528a;
+  --button-highlight: #0066c4;
+  --button-icon: #d4e9ff;
+}
+
+body.filgyb-button-theme {
+  --button-edge: #111c2e;
+  --button-mid: #1d3955;
+  --button-highlight: #315778;
+  --button-icon: #8edbff;
+}
+
+body :is(a.button, a.action, a.nav-cta, a.language, a.language-switch,
+  [role="button"], button, input[type="button"], input[type="submit"],
+  input[type="reset"], .launch-copy .actions button.launch-badge) {
+  padding: .8em 1.1em;
+  gap: .4rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 25%);
+  background: linear-gradient(15deg,
+    var(--button-edge), var(--button-mid), var(--button-highlight),
+    var(--button-mid), var(--button-edge)) no-repeat;
+  background-size: 300%;
+  background-position: left center;
+}
+
+body :is(a.button, a.action, a.nav-cta, a.language, a.language-switch,
+  [role="button"], button, input[type="button"], input[type="submit"],
+  input[type="reset"]):not(:disabled):is(:hover, :focus-visible, :active) {
+  background-size: 320%;
+  background-position: right center;
+}
+
+body :is(a.button, a.action, a.nav-cta, a.language, a.language-switch,
+  [role="button"], button, input[type="button"], input[type="submit"],
+  input[type="reset"]):focus-visible {
+  outline: 2px solid #8edbff;
+  outline-offset: 3px;
+}
+
+body :is(a.button, a.action, a.nav-cta, a.language, a.language-switch,
+  [role="button"], button) svg {
+  width: 23px;
+  fill: var(--button-icon);
+}
+
+body :is(a.button, a.action, a.nav-cta, a.language, a.language-switch,
+  [role="button"], button):not(:disabled):is(:hover, :focus-visible, :active) svg {
+  fill: #fff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body :is(a.button, a.action, a.nav-cta, a.language, a.language-switch,
+    [role="button"], button, input[type="button"], input[type="submit"],
+    input[type="reset"]) {
+    transition: background-position .3s ease, background-size .3s ease;
+  }
+
+  body :is(a.button, a.action, a.nav-cta, a.language, a.language-switch,
+    [role="button"], button) svg {
+    transition: fill .3s ease;
+  }
+}
