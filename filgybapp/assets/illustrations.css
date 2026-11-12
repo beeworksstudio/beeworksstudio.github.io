@@ -1,0 +1,71 @@
+.filgyb-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.filgyb-art--community-art { max-width: 420px; }
+.filgyb-art--privacy-shield { width: clamp(110px, 25vw, 180px); margin-inline: 0; }
+
+
+
+@media (max-width: 700px) {
+  .filgyb-art--community-art { width: min(100%, 290px); }
+}
+
+.section.bank-password-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.bank-password-picture { display: block; width: min(100%, 580px); }
+
+.privacy .filgyb-art--bank-password-art {
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 1080 / 760;
+  object-fit: cover;
+  object-position: center 72%;
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-social a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+.footer-social img { display: block; }
+
+@media (max-width: 760px) {
+  .privacy .filgyb-art--bank-password-art {
+    max-width: none;
+    aspect-ratio: 900 / 680;
+    object-fit: contain;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .bank-password-picture {
+      animation: bank-password-tilt linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 65%;
+    }
+  }
+}
+
+@keyframes bank-password-tilt {
+  from { transform: perspective(900px) rotateY(9deg); }
+  to { transform: perspective(900px) rotateY(-9deg); }
+}

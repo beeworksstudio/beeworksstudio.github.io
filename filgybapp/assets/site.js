@@ -34,30 +34,11 @@ function buildSupportDraft(values, arabic = false) {
   const subject = String(values.subject || '').replace(/[\r\n]+/g, ' ').trim();
   const labels = arabic ? ['الاسم', 'البريد الإلكتروني', 'الرسالة'] : ['Name', 'Email', 'Message'];
   const body = `${labels[0]}: ${String(values.name || '').trim()}\n${labels[1]}: ${String(values.email || '').trim()}\n\n${labels[2]}:\n${String(values.message || '').trim()}`;
-  const prefix = values.app === 'general' ? 'BeeWorks Studio support' : 'FilGyb support';
-  return 'mailto:support@beeworksapps.com?subject=' + encodeURIComponent(prefix + ' — ' + subject) + '&body=' + encodeURIComponent(body);
+  return 'mailto:support@beeworksapps.com?subject=' + encodeURIComponent('FilGyb support — ' + subject) + '&body=' + encodeURIComponent(body);
 }
 const contactForm = document.querySelector('[data-contact-form]');
 if (contactForm) {
   const status = contactForm.querySelector('[data-form-status]');
-  const app = contactForm.elements.namedItem('app');
-  if (app) {
-    app.value = new URLSearchParams(window.location.search).get('app') === 'filgyb' ? 'filgyb' : 'general';
-    const languageSwitch = document.querySelector('.language-switch');
-    function syncAppSelection() {
-      const selected = app.value === 'filgyb';
-      app.parentElement.dataset.app = app.value;
-      document.querySelectorAll('.help-topics, .support-tips').forEach(section => { section.hidden = !selected; });
-      if (languageSwitch) {
-        const alternate = new URL(languageSwitch.href);
-        if (selected) alternate.searchParams.set('app', 'filgyb');
-        else alternate.searchParams.delete('app');
-        languageSwitch.href = alternate.href;
-      }
-    }
-    app.addEventListener('change', syncAppSelection);
-    syncAppSelection();
-  }
   const editable = [...contactForm.querySelectorAll('input[required], textarea[required]')];
   editable.forEach(field => field.addEventListener('input', () => field.setCustomValidity('')));
   contactForm.addEventListener('submit', event => {
