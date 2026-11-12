@@ -1,0 +1,54 @@
+/* FilGyb product and legal pages */
+.hero.launch-teaser {
+  background: radial-gradient(ellipse at 64% 50%, #1e3555 0%, transparent 70%), #0b1019;
+}
+.launch-teaser .hero-bank-art { opacity: .65; }
+.gallery-section { background-color: #0b1019; }
+#features .features article { border-radius: 24px; }
+.bank-password-section .bank-password-picture { margin-inline: auto; }
+.feedback { text-align: center; }
+
+.filgyb-legal {
+  --canvas: #f5f5f7;
+  color: #1d1d1f;
+}
+.filgyb-legal .legal-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(96px, 150px);
+  gap: 12px 32px;
+  align-items: center;
+}
+.filgyb-legal .legal-header > * { grid-column: 1; margin-block: 0; }
+.filgyb-legal .legal-header > .text-link { grid-column: 1 / -1; justify-self: start; }
+.filgyb-legal .legal-header > :is(img, svg) {
+  grid-column: 2;
+  grid-row: 2 / span 3;
+  width: 100%;
+  height: auto;
+  max-width: 140px;
+  justify-self: center;
+}
+.filgyb-legal .legal-header > svg { max-width: 96px; }
+.legal-summary {
+  background: var(--canvas);
+  border-radius: 18px;
+  padding: clamp(16px, 3vw, 28px);
+  max-width: 64ch;
+}
+.legal-summary h2 { font-size: 1.125rem; margin: 0 0 .35em; }
+.legal-summary p { margin: 0; }
+.filgyb-legal .legal-grid article :is(p, li) { line-height: 1.7; }
+[dir="rtl"] .filgyb-legal .legal-grid article :is(p, li) { line-height: 1.9; }
+.filgyb-legal .legal-grid article section + section {
+  border-block-start: 1px solid var(--line, #d2d2d7);
+  padding-block-start: 24px;
+}
+@media (max-width: 640px) {
+  .filgyb-legal .legal-header { grid-template-columns: minmax(0, 1fr); }
+  .filgyb-legal .legal-header > :is(img, svg) {
+    grid-column: 1;
+    grid-row: 2;
+    width: 80px;
+    justify-self: start;
+  }
+}

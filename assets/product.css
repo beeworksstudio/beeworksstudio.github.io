@@ -36,7 +36,6 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-device { animation: phone-settle 400ms ease-out both; }
-  .features.is-entering { animation: phone-settle 300ms ease-out both; }
   .button:active, .gallery-controls button:active { scale: .98; }
   .faq summary::after { transition: rotate 160ms ease-out; }
 }
@@ -82,4 +81,129 @@
     animation: phone-settle 340ms cubic-bezier(.2,.75,.3,1) both;
   }
   .button, .gallery-controls button { transition: scale 140ms ease-out; }
+}
+
+.privacy-icon { background: none; border: 0; border-radius: 0; }
+@media (max-width: 720px) { .privacy-icon { width: 112px; height: 112px; } }
+
+/* Landing page rhythm and section hierarchy. */
+#main:has(.launch-teaser) {
+  --section-space: clamp(56px, 8vw, 112px);
+}
+
+#main:has(.launch-teaser) :where(.section) {
+  padding-block: var(--section-space) 0;
+}
+
+.hero.launch-teaser {
+  padding-block: clamp(40px, 6vw, 84px) 24px;
+  padding-inline: max(24px, calc((100% - 1120px) / 2));
+  background: radial-gradient(ellipse 48% 50% at 68% 50%, #182b43, transparent);
+}
+
+[dir="rtl"] .hero.launch-teaser {
+  background-position: center;
+  background-image: radial-gradient(ellipse 48% 50% at 32% 50%, #182b43, transparent);
+}
+
+.launch-copy h1 {
+  margin-block: 0 14px;
+}
+
+.launch-copy .actions .button {
+  font-size: 14px;
+  padding-inline: 18px;
+}
+
+#main .gallery-section {
+  margin-block-start: 24px;
+  border-block-start: 1px solid #ffffff12;
+}
+
+#main .features article {
+  padding: clamp(20px, 3vw, 32px);
+  background: #111c2b;
+}
+
+#main .features .number {
+  margin-block-end: 16px;
+}
+
+#main .privacy {
+  grid-template-columns: minmax(100px, 180px) minmax(0, 1fr);
+}
+
+#main .feedback {
+  margin-block-start: var(--section-space);
+  padding: clamp(28px, 6vw, 68px);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: radial-gradient(ellipse at top, #1a2d46, #101a28 75%);
+  text-align: center;
+}
+
+.feedback h2 {
+  max-inline-size: 22ch;
+  margin-inline: auto;
+  font-size: clamp(28px, 5vw, 56px);
+  overflow-wrap: anywhere;
+}
+
+.feedback .lead {
+  margin-block-start: 18px;
+  line-height: 1.6;
+}
+
+#main .closing {
+  padding-block-end: clamp(48px, 7vw, 96px);
+}
+
+@media (max-width: 700px) {
+  .hero.launch-teaser,
+  [dir="rtl"] .hero.launch-teaser {
+    padding-inline: 18px;
+    background-image: radial-gradient(ellipse 85% 48% at 50% 55%, #182b43, transparent);
+  }
+
+  .launch-teaser .hero-device {
+    width: min(280px, 86%);
+  }
+
+  #main .privacy {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #main .feedback {
+    border-radius: 22px;
+  }
+}
+
+/* Center the product story and place the phone beneath it. */
+.hero.launch-teaser,
+[dir="rtl"] .hero.launch-teaser {
+  background-image: radial-gradient(ellipse 70% 48% at 50% 52%, #182b43, transparent);
+}
+.launch-copy h1 {
+  max-inline-size: 17ch;
+  margin-inline: auto;
+}
+.launch-teaser .hero-device {
+  margin-block-start: clamp(28px, 5vw, 56px);
+}
+.launch-copy .actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 440px) {
+  .launch-copy .actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feedback-finished {
+  color: #c5b5ff;
+}
+
+.feedback-launches {
+  color: #8edbff;
 }

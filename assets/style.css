@@ -142,3 +142,54 @@
   .about-story { grid-template-columns: 1fr; margin-block: 28px 36px; }
   .about-visual img { width: min(100%, 210px); }
 }
+
+.help-topics[hidden], .support-tips[hidden] { display: none; }
+
+@media (max-width: 480px) {
+  .studio-support .nav { flex-wrap: wrap; gap: 4px 12px; padding-block: 8px; }
+  .studio-support .nav .brand { min-width: 0; font-size: 14px; letter-spacing: 0; }
+  .studio-support .nav nav { flex-wrap: wrap; gap: 4px 12px; }
+  .studio-support .nav nav a { min-height: 44px; }
+}
+
+.support-app-picker { position: relative; }
+.support-app-picker select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 50px;
+  padding: 13px 15px;
+  padding-inline: 52px 40px;
+  border: 1px solid #ccd4df;
+  border-radius: 12px;
+  background: var(--canvas);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.support-app-picker select:focus { outline: 2px solid #62517f; outline-offset: 3px; border-color: #62517f; }
+.support-app-art {
+  position: absolute;
+  inset-inline-start: 15px;
+  inset-block-start: 50%;
+  width: 26px;
+  height: 26px;
+  transform: translateY(-50%);
+  background: url("beeworks-studio.png") center / contain no-repeat;
+  pointer-events: none;
+}
+.support-app-picker[data-app="filgyb"] .support-app-art { background-image: url("filgyb-icon.png"); }
+.support-app-picker::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 17px;
+  inset-block-start: 50%;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}

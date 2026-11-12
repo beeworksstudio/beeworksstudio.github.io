@@ -1,0 +1,49 @@
+.launch-teaser .hero-device-wrap {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 880px);
+  margin-inline: auto;
+}
+
+.launch-teaser .hero-device { z-index: 1; }
+
+.hero-bank-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .32;
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+.hero-bank-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: -50% -50%;
+}
+
+.hero-bank-art:not([data-ready]) { visibility: hidden; }
+
+.hero-bank-item img {
+  display: block;
+  width: clamp(32px, 5vw, 52px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 22%;
+}
+
+.hero-feature-pill {
+  display: block;
+  padding: .42em .8em;
+  border-radius: 999px;
+  background: #8edbff;
+  color: #102638;
+  font-size: clamp(.68rem, 1.5vw, .9rem);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .launch-teaser .hero-device-wrap .hero-device { width: 76%; }
+}
