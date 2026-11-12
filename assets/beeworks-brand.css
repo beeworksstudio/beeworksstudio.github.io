@@ -1,0 +1,10 @@
+.beeworks-wordmark,
+.brand img.beeworks-wordmark,
+.studio-signature img.beeworks-wordmark {
+  display: inline-block;
+  width: clamp(72px, 16vw, 110px);
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  object-fit: contain;
+}
