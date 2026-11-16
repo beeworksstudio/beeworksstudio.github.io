@@ -193,3 +193,13 @@
   transform: translateY(-70%) rotate(45deg);
   pointer-events: none;
 }
+
+.studio-signature .signature-wordmark {
+  display: block;
+  box-sizing: border-box;
+  width: 110px;
+  height: auto;
+  padding: 5px 7px;
+  border-radius: 5px;
+  background: #fff;
+}
