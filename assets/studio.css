@@ -18,3 +18,11 @@ body{background:#fff}.nav{position:sticky;top:0;z-index:10;background:#ffffffed;
   .hero-art:has(.hero-wordmark) { position: static; order: 1; opacity: 1; width: min(48vw, 180px); margin-inline: auto; z-index: auto; }
   .hero-art > .hero-wordmark { width: 100%; }
 }
+
+.hero-brand::before, .hero-brand::after { display: none; }
+.hero-brand > img.hero-wordmark:first-child { width: min(83%, 390px); height: auto; }
+.brand > img[src="/assets/beeworks-red-mark.png"] { object-fit: contain; }
+@media (max-width: 760px) {
+  .hero-brand:has(.hero-wordmark) { width: min(57vw, 240px); }
+  .hero-brand > img.hero-wordmark:first-child { width: 100%; }
+}

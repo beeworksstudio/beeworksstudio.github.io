@@ -8,3 +8,8 @@
   vertical-align: middle;
   object-fit: contain;
 }
+
+.brand img.beeworks-header-mark { width: clamp(58px, 10vw, 80px); height: auto; object-fit: contain; }
+footer img.beeworks-footer-mark,
+footer .brand img.beeworks-footer-mark,
+footer .studio-signature img.beeworks-footer-mark { width: 66px; height: auto; object-fit: contain; vertical-align: middle; }
