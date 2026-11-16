@@ -10,3 +10,11 @@ body{background:#fff}.nav{position:sticky;top:0;z-index:10;background:#ffffffed;
 /* The supplied PNG already contains the phone: avoid a second device frame. */
 .product-shot{align-items:flex-start;max-height:590px}.product-shot img{width:min(100%,390px);height:auto;object-fit:contain;flex-shrink:0;margin-top:-55px}.product-shot:after{display:none}
 @media(max-width:760px){.product-shot{max-height:520px;padding:0 12px}.product-shot img{width:min(100%,350px);margin-top:-42px}}
+
+.hero-art:has(.hero-wordmark) { aspect-ratio: auto; gap: 0; }
+.hero-art:has(.hero-wordmark) > img:first-child { width: 78%; height: auto; }
+.hero-art > .hero-wordmark { display: block; width: 70%; height: auto; z-index: 1; }
+@media (max-width: 760px) {
+  .hero-art:has(.hero-wordmark) { position: static; order: 1; opacity: 1; width: min(48vw, 180px); margin-inline: auto; z-index: auto; }
+  .hero-art > .hero-wordmark { width: 100%; }
+}
