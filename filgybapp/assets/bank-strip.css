@@ -1,30 +1,26 @@
-.hero-device-wrap .hero-device { width: 76%; }
 .bank-strip { margin-block: 0 clamp(30px, 6vw, 72px); min-width: 0; }
 .bank-strip-head { text-align: center; margin: 0 auto 18px; max-width: 36rem; }
 .bank-strip-head h2 { margin: 0; font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.13; text-wrap: balance; }
 .bank-strip-head p { margin: 10px 0 0; color: var(--muted); text-wrap: pretty; }
 .bank-strip-row { overflow-x: auto; max-width: 100%; margin-block: 10px; }
-.bank-strip-group { display: flex; justify-content: space-evenly; align-items: center; min-width: 100%; gap: 16px; }
-.bank-strip-logo { display: grid; place-items: center; flex: 0 0 clamp(60px, 19vw, 108px); }
-.bank-strip-logo img { display: block; width: 48px; height: 48px; object-fit: contain; }
-@media (prefers-reduced-motion: no-preference) {
-  .bank-strip-group { animation: bank-row-enter 630ms ease-out both; }
-  .bank-strip-second .bank-strip-group { animation-delay: 100ms; }
-  @keyframes bank-row-enter {
-    from { transform: translateX(-12px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-}
-
 .hero-device-wrap .hero-device { width: min(88%, 410px); }
 @media (max-width: 760px) {
   .hero-device-wrap .hero-device { width: min(88%, 315px); }
 }
-.bank-strip-track { display: flex; width: max-content; }
-.bank-strip-group { min-width: 0; flex: none; justify-content: flex-start; padding-inline-end: 16px; animation: none; }
+.bank-strip-track { display: flex; inline-size: max-content; direction: ltr; }
+.bank-strip-group {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--bank-slot);
+  align-items: center;
+  gap: var(--bank-gap);
+  padding-inline-end: var(--bank-gap);
+  flex: 0 0 auto;
+}
+.bank-strip-row { --bank-slot: 100px; --bank-gap: 16px; }
 .bank-strip-copy { display: none; }
-.bank-strip-logo { flex: 0 0 clamp(62px, 17vw, 100px); }
-.bank-strip-logo img { width: 54px; height: 54px; }
+.bank-strip-logo { display: grid; place-items: center; block-size: 68px; }
+.bank-strip-logo img { display: block; inline-size: 54px; block-size: 54px; object-fit: contain; }
 .feature-card-labels { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
 .bank-strip-pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 8px; color: #8edbff; font-size: .78rem; border: 1px solid #8edbff40; border-radius: 999px; }
 .bank-strip-pill svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
@@ -32,7 +28,7 @@
 @keyframes bank-strip-ltr { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @media (prefers-reduced-motion: no-preference) {
   .bank-strip.is-moving .bank-strip-row { overflow: hidden; }
-  .bank-strip.is-moving .bank-strip-copy { display: flex; }
+  .bank-strip.is-moving .bank-strip-copy { display: grid; }
   .bank-strip.is-moving .bank-strip-track { animation: bank-strip-ltr 112s linear infinite; }
   .bank-strip.is-moving .bank-strip-second .bank-strip-track { animation-duration: 135s; animation-delay: -9s; }
   .bank-strip.is-moving:not(.is-visible) .bank-strip-track,
@@ -41,8 +37,9 @@
 }
 
 @media (max-width: 760px) {
-  .bank-strip-logo { flex-basis: 78px; }
-  .bank-strip-logo img { width: 62px; height: 62px; }
+  .bank-strip-row { --bank-slot: 78px; --bank-gap: 14px; margin-block: 12px; }
+  .bank-strip-logo { block-size: 76px; }
+  .bank-strip-logo img { inline-size: 62px; block-size: 62px; }
   .bank-strip.is-moving .bank-strip-track { animation-duration: 160s; }
   .bank-strip.is-moving .bank-strip-second .bank-strip-track { animation-duration: 185s; }
 }
