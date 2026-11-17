@@ -13,3 +13,29 @@
 footer img.beeworks-footer-mark,
 footer .brand img.beeworks-footer-mark,
 footer .studio-signature img.beeworks-footer-mark { width: 66px; height: auto; object-fit: contain; vertical-align: middle; }
+
+.brand img.beeworks-header-icon { width: 32px; height: 32px; object-fit: contain; flex: none; }
+.hero-brand > img.hero-wordmark:first-child { width: min(72%, 330px); }
+@media (max-width: 760px) {
+  .hero-brand > img.hero-wordmark:first-child { width: min(100%, 180px); }
+  .brand img.beeworks-header-icon { width: 26px; height: 26px; }
+}
+
+footer a.beeworks-footer-link { display: inline-flex; align-items: center; gap: 8px; }
+footer .beeworks-footer-link img { flex: none; }
+
+@keyframes beeworks-hero-reveal {
+  0% { clip-path: circle(15%); opacity: 0; }
+  22% { clip-path: circle(15%); opacity: 1; }
+  100% { clip-path: circle(72%); opacity: 1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-brand > .hero-wordmark {
+    animation: beeworks-hero-reveal 620ms ease-out both;
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  footer .beeworks-footer-mark { transition: transform 160ms ease-out; }
+  footer a:hover .beeworks-footer-mark,
+  footer a:focus-visible .beeworks-footer-mark { transform: translateY(-3px); }
+}
