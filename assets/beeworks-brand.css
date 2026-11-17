@@ -39,3 +39,11 @@ footer .beeworks-footer-link img { flex: none; }
   footer a:hover .beeworks-footer-mark,
   footer a:focus-visible .beeworks-footer-mark { transform: translateY(-3px); }
 }
+
+@media (max-width: 760px) {
+  .hero > .hero-brand:has(.hero-wordmark) {
+    order: -1;
+    width: min(29vw, 112px);
+    margin-inline: auto;
+  }
+}
