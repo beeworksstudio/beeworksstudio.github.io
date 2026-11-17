@@ -39,3 +39,10 @@
   .bank-strip-row:hover .bank-strip-track,
   .bank-strip-row:focus-within .bank-strip-track { animation-play-state: paused; }
 }
+
+@media (max-width: 760px) {
+  .bank-strip-logo { flex-basis: 78px; }
+  .bank-strip-logo img { width: 62px; height: 62px; }
+  .bank-strip.is-moving .bank-strip-track { animation-duration: 160s; }
+  .bank-strip.is-moving .bank-strip-second .bank-strip-track { animation-duration: 185s; }
+}
